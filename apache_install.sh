@@ -1,5 +1,4 @@
 #!/bin/bash
-export TERM=xterm
 
 # Repo update és Apache telepítés
 clear
