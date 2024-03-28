@@ -11,8 +11,8 @@ echo
 echo
 echo "Repo update és Apache telepítés"
 sleep 2
-sudo apt update
-sudo apt install apache2 -y
+sudo yum update
+sudo yum install httpd -y
 echo
 echo
 
@@ -21,7 +21,14 @@ echo "Apache service engedélyezése és azonnali indítása"
 sleep 2
 echo
 echo
-sudo systemctl enable apache2 && systemctl start apache2
+sudo systemctl enable httpd && systemctl start httpd
+echo
+echo
+# Apache service státuszának ellenőrzése
+sudo systemctl status httpd
+echo
+echo
+sleep 2
 echo
 echo
 
