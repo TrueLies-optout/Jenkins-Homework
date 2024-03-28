@@ -5,7 +5,9 @@ Creadted by NT
 </div>
 
 
-Ebben a házi feladatban egy olyan Jenkins pipeline megírása volt a feladat, ami egy publikus GIT repóból letölt egy telepítőszrkiptet, majd a Jenkins slave node-on végrehajt egy webszerver telepítést, készít egy file-t a telepítés időpontjáról, majd a telepítési idővel ellátott TXT fájlt artifactként elmenti. 
+Ebben a házi feladatban egy olyan Jenkins pipeline megírása volt a feladat, ami egy publikus GIT repóból letölt egy telepítő scriptet, 
+majd a Jenkins slave node-on végrehajt egy webszerver telepítést, készít egy file-t a telepítés időpontjáról, majd a telepítési idővel 
+ellátott TXT fájlt artifactként elmenti. 
 
 #### apache_install.sh ismertetése:
 
@@ -22,10 +24,11 @@ A scriptben fellelhető dupla **echo** és **sleep 2** parancsok a készítő ne
 
 #### Jenkinsfile ismertetése
 
+**Fontos előfeltétel, hogy a node-on található jenkins usernek megfelelő jogosultsága legyen a sudo parancsok futtatására!**
+
 A Jenkins pipeline-ban meghatározásra kerül a feladat elvégzésére kijelölt **node** (slave). Az első stage-en letöltésre kerül a **GITHUB repositoryban** tárolt bash script. A következőben először futtatási joggal (chmod +x) látjuk el, majd futtatjuk az **apache_install.sh**-t.
 
 A **post** blokkban pedig a pipeline elmenti az apache_install_date.txt-t, mint artifact. 
-
 
 
 
