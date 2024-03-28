@@ -17,14 +17,6 @@ sudo yum install httpd -y
 echo
 echo
 
-# Apache service engedélyezése és azonnali indítása
-echo "Apache service engedélyezése és azonnali indítása"
-sleep 2
-echo
-echo
-sudo systemctl enable httpd && systemctl start httpd
-echo
-echo
 # Apache service státuszának ellenőrzése
 sudo systemctl status httpd
 echo
